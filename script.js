@@ -1,4 +1,4 @@
-let gameFrame = document.getElementById("game-frame");
+gameFrame = document.getElementById("game-frame");
 const gameList = document.getElementById("game-list");
 const gameContainer = document.getElementById("game-container");
 const backBtn = document.getElementById("backBtn");
