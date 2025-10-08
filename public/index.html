@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminis Math</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="stars"></div>
+
+  <div id="header">
+    <h1>★Luminis★</h1>
+    <input type="text" id="search-bar" placeholder="Search games...">
+  </div>
+
+  <ul id="game-list">
+ <li><button data-game="https://docs.google.com/forms/d/e/1FAIpQLScYZ7ABNmXWdltH0MNWu9ngosgdzp17nESunPB7DWrr9kw8Fw/viewform?usp=dialog">Game suggestions</button></li>
+    <li><button data-game="games/1v1lol.html">1v1LOL</button></li>
+    <li><button data-game="games/2d-doom.html">2D Doom</button></li>
+    <li><button data-game="games/2048.html">2048</button></li>
+    <li><button data-game="games/2048-cupcakes.html">2048 Cupcakes</button></li>
+    <li><button data-game="games/among-us.html">Among Us</button></li>
+    <li><button data-game="games/bad-parenting.html">Bad Parenting</button></li>
+    <li><button data-game="games/baldis-basics.html">Baldi's Basics</button></li>
+    <li><button data-game="games/baldis-basics-plus.html">Baldi's Basics Plus</button></li>
+    <li><button data-game="games/basketball-stars.html">Basketball Stars</button></li>
+    <li><button data-game="games/battle-sim.html">Battle Sim</button></li>
+    <li><button data-game="games/binding-of-isaac.html">Binding of Isaac</button></li>
+    <li><button data-game="games/bit-life.html">Bit Life</button></li>
+    <li><button data-game="games/bloxorz.html">Bloxorz</button></li>
+    <li><button data-game="games/block-blast.html">Block Blast</button></li>
+    <li><button data-game="games/bloons-td4.html">Bloons TD4</button></li>
+    <li><button data-game="games/bendy-and-the-ink-machine.html">Bendy and the Ink Machine</button></li>
+    <li><button data-game="games/bounce-masters.html">Bounce Masters</button></li>
+    <li><button data-game="games/buckshot-roulette.html">Buckshot Roulette</button></li>
+    <li><button data-game="games/class-of.html">Class of 09</button></li>
+    <li><button data-game="https://clusterrush.io/game/cluster-rush/">Cluster Rush</button></li>
+    <li><button data-game="games/cookie-clicker.html">Cookie Clicker</button></li>
+    <li><button data-game="games/crazy-cattle-3d.html">Crazy Cattle 3D</button></li>
+    <li><button data-game="games/cuphead.html">Cuphead</button></li>
+    <li><button data-game="games/dig-to-china.html">Dig to China</button></li>
+    <li><button data-game="games/doom.html">DOOM</button></li>
+    <li><button data-game="games/minecraft.html">Minecraft</button></li>
+    <li><button data-game="games/emulator-js.html">Emulator JS</button></li>
+    <li><button data-game="games/hollow-knight.html">Hollow Knight</button></li>
+    <li><button data-game="games/jelly-mario.html">Jelly Mario</button></li>
+    <li><button data-game="games/k-indergarten.html">Kindergarten</button></li>
+    <li><button data-game="games/kindergarten-2.html">Kindergarten 2</button></li>
+    <li><button data-game="games/kindergarten-3.html">Kindergarten 3</button></li>
+    <li><button data-game="games/people-playground.html">People Playground</button></li>
+    <li><button data-game="games/pizza-tower.html">Pizza Tower</button></li>
+    <li><button data-game="games/thats-not-my-neighbor.html">That's Not My Neighbor</button></li>
+    <li><button data-game="games/undertale-yellow.html">Undertale Yellow</button></li>
+    <li><button data-game="games/stickminfleecomplex.html">Fleeing the Complex</button></li>
+    <li><button data-game="games/stickminescapingprison.html">Escaping the prison</button></li>
+    <li><button data-game="games/stickminbreakingbank.html">Breaking the bank</button></li>
+    <li><button data-game="games/stickminairship.html">Infiltrating the Airship</button></li>
+    <li><button data-game="games/stickmanstealingdiamond.html">Stealing the diamond</button></li>
+    <li><button data-game="games/redball4.html">Red ball 4</button></li>
+    <li><button data-game="games/picosschool.html">Picos School</button></li>
+    <li><button data-game="games/paperio.html">Paper io</button></li>
+    <li><button data-game="games/ovofixed.html">OVO</button></li>
+    <li><button data-game="games/newyorkshark.html">New york shark</button></li>
+    <li><button data-game="games/myfriendpedro.html">My friend pedro</button></li>
+    <li><button data-game="games/motox3m.html">Motox3m</button></li>
+    <li><button data-game="games/jellytruckgood.html">Jelly truck</button></li>
+    <li><button data-game="games/infinitecraft.html">Infinite craft</button></li>
+    <li><button data-game="games/houseofhazards.html">House of hazards</button></li>
+    <li><button data-game="games/happywheels.html">Happy wheels</button></li>
+    <li><button data-game="games/halflife.html">Half life</button></li>
+    <li><button data-game="games/granny.html">Granny</button></li>
+    <li><button data-game="games/gdlite.html">Geometry dash</button></li>
+    <li><button data-game="games/fridaynightfunkin.html">FNF</button></li>
+    <li><button data-game="games/fnafsl.html">Fnaf sister location</button></li>
+    <li><button data-game="games/fnafps.html">Fnaf pizza simulator</button></li>
+    <li><button data-game="games/flappydunk.html">Flappy dunk</button></li>
+    <li><button data-game="games/fivenightsatshrekshotel.html">Five nights at shreks hotel</button></li>
+    <li><button data-game="games/fireboyandwatergirl.html">Fire boy and water girl</button></li>
+    <li><button data-game="games/ducklife3.html">Duck life 3</button></li>
+    <li><button data-game="games/ducklife2.html">Duck life 2</button></li>
+    <li><button data-game="games/ducklife.html">Duck life</button></li>
+    <li><button data-game="games/driftboss.html">Drift boss</button></li>
+    <li><button data-game="games/doodlejumpgoober.html">Doodle jump goober</button></li>
+    <li><button data-game="games/dokidokiliteratureclub.html">Doki doki literature club</button></li>
+    <li><button data-game="games/dogeminer2.html">Doge miner 2</button></li>
+    <li><button data-game="games/dogeminer.html">Doge miner</button></li>
+    <li><button data-game="games/digtochina.html">Dig to china</button></li>
+    <li><button data-game="games/cuttherope.html">Cut the rope</button></li>
+    <li><button data-game="games/csgoclicker.html">Csgo clicker</button></li>
+    <li><button data-game="games/crossyroad.html">Crossy road</button></li>
+    <li><button data-game="games/catmario.html">Cat mario</button></li>
+    <li><button data-game="games/capybaraclicker.html">Capybara clicker</button></li>
+    <li><button data-game="games/fnaf4.html">Fnaf 4</button></li>
+    <li><button data-game="games/fnaf3.html">Fnaf 3</button></li>
+    <li><button data-game="games/fnaf2.html">Fnaf 2</button></li>
+    <li><button data-game="games/fnaf.html">Fnaf</button></li>
+    <li><button data-game="games/backrooms.html">Backrooms</button></li>
+    <li><button data-game="games/flappybird.html">Flappy bird</button></li>
+    <li><button data-game="games/JustFall.lol.html">JustFall.lol</button></li>
+    <li><button data-game="games/melon-playground.html">Melon playground</button></li>
+    <li><button data-game="games/milkmankarlson.html">Milkman carlson</button></li>
+    <li><button data-game="games/om-ori.html">OMORI</button></li>
+    <li><button data-game="games/pacman.html">Pacman</button></li>
+    <li><button data-game="games/papaspizza.html">Papas pizzaria </button></li>
+    <li><button data-game="games/raft.html">Raft</button></li>
+    <li><button data-game="games/repo.html">REPO</button></li>
+    <li><button data-game="games/rerun.html">Re run</button></li>
+    <li><button data-game="games/riddleschool.html">Riddle school</button></li>
+    <li><button data-game="games/r-ocket-l-eague.html">Rocket league</button></li>
+    <li><button data-game="games/run.html">Run</button></li>
+    <li><button data-game="games/slender.html">Slender man</button></li>
+    <li><button data-game="games/slope.html">Slope</button></li>
+    <li><button data-game="games/sm64.html">Super mario 64</button></li>
+    <li><button data-game="games/smashkarts.html">Smash karts</button></li>
+    <li><button data-game="games/spacewaves.html">Space waves</button></li>
+    <li><button data-game="games/srb2.html">Sonic robo blast 2</button></li>
+    <li><button data-game="games/sriddleschool2.html">Riddle school 2</button></li>
+    <li><button data-game="games/stickman-hook.html">Stickman hook</button></li>
+    <li><button data-game="games/subway-surfers.html">Subway surfers</button></li>
+    <li><button data-game="games/superhot.html">Super hot</button></li>
+    <li><button data-game="games/there-is-no-game.html">There is no game</button></li>
+    <li><button data-game="games/twhg.html">The worlds hardest game</button></li>
+    <li><button data-game="games/ultra-kill.html">Ultra kill</button></li>
+    <li><button data-game="games/und-erwheels.html">Under wheels</button></li>
+    <li><button data-game="games/w-ebf-ishing.html">Web fishing</button></li>
+    <li><button data-game="games/wordle-unlimited.html">Wordle</button></li>
+    </ul>
+
+  <div id="game-container">
+    <button id="backBtn">⬅ Back<div class="reflection"><canvas></canvas></div></button>
+    <div id="iframe-wrapper">
+      <div id="fake-glow"></div>
+      <iframe id="game-frame" tabindex="0"></iframe>
+    </div>
+    <button id="fullBtn">⛶ Fullscreen<div class="reflection"><canvas></canvas></div></button>
+  </div>
+
+<div id="proxy-header">
+  <h2>★Luminis Proxy★</h2>
+</div>
+
+
+ <div id="luminis-proxy">
+  <input type="text" id="proxyInput" placeholder="Enter URL..." />
+  <button id="proxyGo">Go</button>
+  <button id="proxyFullBtn">Fullscreen</button>
+  <div id="iframe-wrapper">
+    <iframe id="browser-frame"></iframe>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
