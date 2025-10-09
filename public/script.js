@@ -108,4 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+import puppeteer from "puppeteer";
+
+const browser = await puppeteer.launch({
+  headless: true,
+  executablePath: process.env.CHROME_PATH || undefined, // fallback to default
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
+
 
