@@ -7,26 +7,30 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-// proxy endpoint
-app.get("/scram/fetch/:encodedUrl", async (req, res) => {
+// proxy route
+app.use("/proxy", async (req, res) => {
+  const targetUrl = req.query.url;
+  if (!targetUrl) return res.status(400).send("No URL provided");
+
   try {
-    const encodedUrl = req.params.encodedUrl;
-    const url = Buffer.from(encodedUrl, "base64").toString("utf-8");
+    const response = await fetch(targetUrl, {
+      headers: {
+        "User-Agent": req.headers["user-agent"],
+        "Accept": req.headers["accept"] || "*/*",
+        "Accept-Language": req.headers["accept-language"] || "en-US,en;q=0.9",
+      },
+    });
 
-    const response = await fetch(url);
-    const contentType = response.headers.get("content-type") || "text/html";
-    const body = await response.text();
-
-    res.setHeader("Content-Type", contentType);
-    res.send(body);
+    // copy headers and send back data
+    res.set("Content-Type", response.headers.get("content-type"));
+    response.body.pipe(res);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Proxy error");
+    res.status(500).send("Proxy error: " + err.message);
   }
 });
 
-// serve static frontend
+// serve frontend (optional if ur frontend on same render app)
 app.use(express.static("public"));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-

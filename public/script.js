@@ -88,7 +88,8 @@ proxyGo.addEventListener("click", () => {
   const url = proxyInput.value.trim();
   if (!url) return;
   const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
-  browserFrame.src = `/scram/fetch/${btoa(formattedUrl)}`;
+  const workerUrl = "https://luminis-proxy.jayden-collazo13.workers.dev/proxy?url=";
+  browserFrame.src = workerUrl + encodeURIComponent(formattedUrl);
   browserFrame.style.display = "block";
   proxyContainer.style.height = "75vh";
 });
