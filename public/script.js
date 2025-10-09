@@ -87,9 +87,9 @@ proxyContainer.style.height = "auto";
 proxyGo.addEventListener("click", () => {
   const url = proxyInput.value.trim();
   if (!url) return;
-  const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
-  const workerUrl = "https://luminis-proxy.jayden-collazo13.workers.dev/proxy?url=";
-  browserFrame.src = workerUrl + encodeURIComponent(formattedUrl);
+  const formattedUrl = url.startsWith("http") ? url : `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
+  const workerUrl = "https://puppeteer-proxy-q9rx.onrender.com/";
+  browserFrame.src = workerUrl + "proxy?url=" + encodeURIComponent(formattedUrl);
   browserFrame.style.display = "block";
   proxyContainer.style.height = "75vh";
 });
