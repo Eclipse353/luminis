@@ -85,35 +85,32 @@ browserFrame.style.display = "none";
 proxyContainer.style.height = "auto";
 
 proxyGo.addEventListener("click", () => {
-  const url = proxyInput.value.trim();
+  let url = proxyInput.value.trim();
   if (!url) return;
-  const formattedUrl = url.startsWith("http") ? url : `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
-  const workerUrl = "https://puppeteer-proxy-q9rx.onrender.com/";
-  browserFrame.src = workerUrl + "proxy?url=" + encodeURIComponent(formattedUrl);
+
+  if (!url.includes(".") && !url.startsWith("http")) {
+    url = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
+  } else if (!url.startsWith("http")) {
+    url = "https://" + url;
+  }
+
+  const workerUrl = "https://puppeteer-proxy-2lbt.onrender.com";
+  browserFrame.src = `${workerUrl}/proxy?url=${encodeURIComponent(url)}`;
   browserFrame.style.display = "block";
   proxyContainer.style.height = "75vh";
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const proxyFullBtn = document.getElementById("proxyFullBtn");
   const browserFrame = document.getElementById("browser-frame");
 
-  if(proxyFullBtn && browserFrame) { // make sure they exist
+  if(proxyFullBtn && browserFrame) { 
     proxyFullBtn.addEventListener("click", () => {
       if (browserFrame.requestFullscreen) browserFrame.requestFullscreen();
-      else if (browserFrame.webkitRequestFullscreen) browserFrame.webkitRequestFullscreen(); // safari
-      else if (browserFrame.msRequestFullscreen) browserFrame.msRequestFullscreen(); // IE
+      else if (browserFrame.webkitRequestFullscreen) browserFrame.webkitRequestFullscreen(); 
+      else if (browserFrame.msRequestFullscreen) browserFrame.msRequestFullscreen(); 
     });
   }
-});
-
-import puppeteer from "puppeteer";
-
-const browser = await puppeteer.launch({
-  headless: true,
-  executablePath: process.env.CHROME_PATH || undefined, // fallback to default
-  args: ['--no-sandbox', '--disable-setuid-sandbox']
 });
 
 
