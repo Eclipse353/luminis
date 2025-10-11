@@ -5,10 +5,7 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-
-// proxy route
-app.use("/proxy", async (req, res) => {
+app.get("/proxy", async (req, res) => {
   const targetUrl = req.query.url;
   if (!targetUrl) return res.status(400).send("No URL provided");
 
@@ -21,7 +18,6 @@ app.use("/proxy", async (req, res) => {
       },
     });
 
-    // copy headers and send back data
     res.set("Content-Type", response.headers.get("content-type"));
     response.body.pipe(res);
   } catch (err) {
